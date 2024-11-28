@@ -8,7 +8,7 @@ const PokemonContainer = () => {
 
   const isRender = data?.length > 0;
 
-  const handleChange = (e) => {
+  handleChange = (e) => {
     fetch(e.target.value)
       .then((res) => res.json())
       .then(({ abilities = [] }) => {
