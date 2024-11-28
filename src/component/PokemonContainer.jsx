@@ -2,13 +2,13 @@ import React, { useContext, useState } from "react";
 import { PokemonContext } from "../context/PokemonContext";
 
 const PokemonContainer = () => {
-    let testVal = ''
+  let testVal = "";
   const { data = [], error } = useContext(PokemonContext);
   const [names, setNames] = useState("");
 
   const isRender = data?.length > 0;
 
-  handleChange = (e) => {
+  const handleChange = (e) => {
     fetch(e.target.value)
       .then((res) => res.json())
       .then(({ abilities = [] }) => {
